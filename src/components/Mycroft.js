@@ -12,6 +12,14 @@ function Mycroft(props) {
         <Villain villain={v} key={v.name} villainCallback={handleArrestVillain}/>
     ))
 
+    const renderMoriartyLocations = () => {
+        return props.moriartyLocations.map(m => (
+            <li>
+                {m.location} - {m.time}
+            </li>
+        ))
+    }
+
     const handleArrestVillain = villain => {
         props.arrestVillain(villain)
     }
@@ -25,13 +33,20 @@ function Mycroft(props) {
                     {renderVillains()}
                 </ul>
             </div>
+            <div>
+                <h3>Moriarty Locations</h3>
+                <ul>
+                    {renderMoriartyLocations()}
+                </ul>
+            </div>
         </>
     )
 }
 
 
-const mapStateToProps = ({villains}) => ({
-    villains
+const mapStateToProps = ({villains, moriartyLocations}) => ({
+    villains,
+    moriartyLocations
 })
 
 const mapDispatchToProps = dispatch => ({
