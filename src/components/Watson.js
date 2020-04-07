@@ -3,7 +3,7 @@ import Form from './Form'
 import {connect} from 'react-redux'
 import { addVillain, addMoriartyLocation } from '../actions'
 
-class Sherlock extends Component {
+class Watson extends Component {
 
     handleAddVillain = ([name, dangerLevel, mo]) => {
         this.props.addNewVillain({name, dangerLevel, mo})
@@ -16,7 +16,7 @@ class Sherlock extends Component {
     render() {
         return (
             <div>
-                <h1>Sherlock</h1>
+                <h1>Watson</h1>
                 <h3>Villains</h3>
                 <Form 
                     inputs={['Name', 'Danger Level', 'M.O.']}
@@ -40,4 +40,4 @@ const mapDispatchToProps = (dispatch) => ({
     addNewMoriartyLocation: info => dispatch(addMoriartyLocation(info))
 })
 
-export default connect(null, mapDispatchToProps)(Sherlock)
+export default connect(null, mapDispatchToProps)(Watson)

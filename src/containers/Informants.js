@@ -9,6 +9,7 @@ import {
   } from 'react-router-dom'
   
 import Sherlock from '../components/Sherlock'
+import Watson from '../components/Watson'
 
 export default function Informants(props) {
 
@@ -20,10 +21,14 @@ export default function Informants(props) {
 
        <div>
        <Link to={`${url}/sherlock`}>Sherlock</Link><br/>
+       <Link to={`${url}/watson`}>Watson</Link><br/>
         </div>
         <Switch>
             <Route path={`${path}/sherlock`}>
                  <Sherlock/>
+            </Route>
+            <Route path={`${path}/watson`}>
+                 <Watson/>
             </Route>
         </Switch>
 
